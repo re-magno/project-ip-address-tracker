@@ -1,13 +1,14 @@
 import React from 'react';
-import './App.css';
 import Header from './components/Header';
+import MapView from './components/MapView';
+import './App.css';
 
 class App extends React.Component {
   render() {
     return (
       <>
       <Header />
-      {/* <Map /> */}
+      <MapView />
       {/* <CardInf /> */}
       </>
     );
