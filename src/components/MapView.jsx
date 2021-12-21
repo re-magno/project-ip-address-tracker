@@ -1,24 +1,22 @@
 import React from 'react';
-import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-// import { icon } from '../assets/icon.svg';
 
-export default function MapView() {
-
-  return (
-    <MapContainer
-      style={ { width: '100vw', height: '100vh' } }
-      center={ [-23.556095935973328, -46.63865573423196] }
-      zoom={ 13 }
-      scrollWheelZoom={ false }
-    >
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-      <Marker position={ [-23.601594231611685, -46.858858732657325] }>
-        <Popup>Venha Conhecer</Popup>
-      </Marker>
-    </MapContainer>
-  );
+class MapView extends React.Component {
+  render() {
+    return (
+      <MapContainer center={ [-23.5489, -46.6388] } zoom={ 10 } scrollWheelZoom={ false }>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={ [-23.60183277855635, -46.85877523519128] }>
+          <Popup>
+            You are here!
+          </Popup>
+        </Marker>
+      </MapContainer>
+    );
+  }
 }
+
+export default MapView;
